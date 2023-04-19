@@ -1,6 +1,7 @@
 <?php
+  
+$pwLenght = $_GET["characters"] ?? "";
 
-$pwLenght = $_GET["characters"];
 
 function generatePw($lenght){
     
