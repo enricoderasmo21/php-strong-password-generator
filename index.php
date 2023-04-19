@@ -1,0 +1,53 @@
+<?php 
+
+$pwLenght = $_GET["characters"];
+
+function generatePw($lenght){
+    
+    $data = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz.,-_<>|!"£$%&/()=?^+@#*{}[]';
+
+    $password = substr(str_shuffle($data), 0, $lenght);
+
+    return $password;
+}
+
+?>
+
+
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <title>PHP Password</title>
+</head>
+<body>
+    <h1 id="title">Password Generator</h1>
+
+    <div id="_container"> 
+        <form action="" method="GET">
+            
+            <label for="customRange3" class="form-label">Numero caratteri</label>
+            <input name="characters" type="number" min="0" max="10" step="1" id="characters">
+        
+            <button type="submit" class="btn btn-outline-primary">CREA</button>
+        </form>
+    </div>
+
+    <div id="result-container">
+        <span>Password =></span>
+        <div id="result">
+            <?php echo generatePw($pwLenght) ?>
+        </div>
+    </div>
+
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>
