@@ -34,7 +34,15 @@ include './partials/functions.php';
     <div id="result-container">
         <span>Password =></span>
         <div id="result">
-            <?php echo generatePw($pwLenght) ?>
+            
+            <?php 
+
+            if($pwLenght != ''){
+
+                echo generatePw($pwLenght);
+            }
+
+            ?>
         </div>
     </div>
 
